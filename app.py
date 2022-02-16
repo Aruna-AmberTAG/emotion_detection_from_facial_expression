@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import cv
+import cv2
 import pickle
 from keras.models import load_model
 import numpy as np
@@ -21,33 +21,33 @@ def after():
 
     img.save('static/file.jpg')
 
-    img1 = cv.imread('static/file.jpg')
-    gray = cv.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-    cascade = cv.CascadeClassifier('haarcascade_frontalface_alt2.xml')
+    img1 = cv2.imread('static/file.jpg')
+    gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+    cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
     faces = cascade.detectMultiScale(gray, 1.1, 3)
 
     for x,y,w,h in faces:
-        cv.rectangle(img1, (x,y), (x+w, y+h), (0,255,0), 2)
+        cv2.rectangle(img1, (x,y), (x+w, y+h), (0,255,0), 2)
 
         cropped = img1[y:y+h, x:x+w]
 
-    cv.imwrite('static/after.jpg', img1)
+    cv2.imwrite('static/after.jpg', img1)
 
     try:
-        cv.imwrite('static/cropped.jpg', cropped)
+        cv2.imwrite('static/cropped.jpg', cropped)
 
     except:
         pass
 
     try:
-        image = cv.imread('static/cropped.jpg', 0)
+        image = cv2.imread('static/cropped.jpg', 0)
     except:
-        image = cv.imread('static/file.jpg', 0)
+        image = cv2.imread('static/file.jpg', 0)
         
-    image = cv.imread('static/file.jpg',0)
+    image = cv2.imread('static/file.jpg',0)
     print(image.shape)
 
-    image = cv.resize(image,(48,48))
+    image = cv2.resize(image,(48,48))
     image = image/255.0
     image = np.reshape(image, (1,48,48,1))
 
