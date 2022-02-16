@@ -8,5 +8,5 @@ matplotlib>=1.4.3
 pandas>=0.19
 opencv-contrib-python-headless
 keras
-tensorflow-estimator>=1.13.0
+tensorflow
 
