@@ -12,5 +12,5 @@ pandas>=0.19
 opencv-contrib-python-headless
 opencv-python>=2.4
 keras
-tensorflow
+
 
