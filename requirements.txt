@@ -11,6 +11,6 @@ matplotlib>=1.4.3
 pandas>=0.19
 opencv-contrib-python-headless
 opencv-python>=2.4
-keras-preprocessing>=1.0.9
-tensorflow-estimator>=1.13.0
+keras
+tensorflow
 
