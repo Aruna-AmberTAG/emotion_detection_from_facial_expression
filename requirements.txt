@@ -6,5 +6,5 @@ matplotlib>=1.4.3
 pandas>=0.19
 opencv-contrib-python-headless
 keras
-tensorflow
+tensorflow-cpu==2.5.0
 
