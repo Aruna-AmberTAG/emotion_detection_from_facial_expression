@@ -1,10 +1,28 @@
 <html>
 
 <body>
-    	<img src="{{url_for('static', filename='after.jpg')}}" alt="image" height=52% width = 50%>
+<style>
+div {
+  font-family: consolas;
+  border: 2px ;
+  border-radius: 25px;
+  background-color: #41483C;
+}
+</style>
 
-	{{data}}
+<div>
+<h1 style=text-align:center;font-size:40px;color:#FCC931;"><b>
+Emotion Recognition using Facial Expressions </b></h1>
 
+<h3 style="text-align:center;color:#FCC931;"><b>AmberTAG Analytics Pvt. Ltd. </b></h3>
+</div>
+<center>
+    	<img src="{{url_for('static', filename='after.jpg')}}" alt="image" height=40% width = 30%>
+<br>
+<br>
+	<h2> Emotion is classified as {{data}}</h2> 
+	
+</center>
 </body>
 
 </html>
